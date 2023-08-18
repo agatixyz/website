@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ThemeChanger from "@/components/theme-switcher";
+import { MainNav } from "@/components/main-nav";
+import { marketingConfig } from "@/config/marketing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeChanger/>
+          <ThemeChanger />
+          <MainNav items={marketingConfig.mainNav} />
           {children}
         </ThemeProvider>
       </body>
